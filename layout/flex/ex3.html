@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>responsive And right-aligned-navigation</title>
+    <style>
+      .navigation {
+        display: flex;
+        justify-content: flex-end;
+        flex-flow: row wrap;
+        background: tomato;
+      }
+      .son {
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background-color: tomato;
+        color: white;
+        font-size: 30px;
+        padding: 10px;
+      }
+      .son:hover {
+        background: lightcoral;
+        cursor: pointer;
+      }
+
+      @media all and (max-width: 800px) {
+        .navigation {
+          justify-content: space-around;
+        }
+      }
+      @media all and (max-width: 500px) {
+        .navigation {
+          flex-direction: column;
+        }
+        .son {
+          border-bottom: 1px solid lightcyan;
+        }
+        .son:last-of-type {
+          border: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="son">Home</div>
+      <div class="son">About</div>
+      <div class="son">Contact</div>
+    </div>
+  </body>
+</html>
