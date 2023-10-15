@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        font-size: 10px;
+      }
+      body {
+        font-size: 5rem;
+      }
+      .serif {
+        font-size: 40%;
+        font-family: serif;
+      }
+      .sans-serif {
+        font-family: sans-serif;
+      }
+      .monospace {
+        font-family: monospace;
+      }
+      .cursive {
+        font-family: cursive;
+      }
+      .fantasy {
+        font-family: fantasy;
+      }
+      .none {
+        font-family: "this is not real", "this also not real";
+      }
+      .style-transform {
+        text-transform: capitalize;
+        text-transform: full-width;
+      }
+      .style-decoration {
+        text-decoration: line-through red wavy;
+        text-decoration: overline lightgreen dashed, underline lightcoral wavy;
+        text-decoration: dashed red line-through underline overline 10px;
+      }
+
+      .shadow {
+        color: yellow;
+        font-size: 20rem;
+        text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.7), -5px 5px 1px purple,
+          -6px 6px 2px rgba(0, 0, 0, 0.7), -10px 10px 1px red,
+          -11px 11px 2px rgba(0, 0, 0, 0.7), -15px 15px 1px green,
+          -16px 16px 2px rgba(0, 0, 0, 0.7), -20px 20px 1px blue;
+      }
+      .shadow.animate {
+        animation: text-shadow 5s infinite;
+      }
+      .shadow.no-transition {
+        text-shadow: -5px 5px 0 purple, -10px 10px 0 red, -15px 15px 0px green,
+          -20px 20px 0 blue;
+      }
+      @keyframes text-shadow {
+        0% {
+          text-shadow: none;
+        }
+
+        25% {
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), 5px 5px 1px purple,
+            6px 6px 2px rgba(0, 0, 0, 0.7), 10px 10px 1px red,
+            11px 11px 2px rgba(0, 0, 0, 0.7), 15px 15px 1px green,
+            16px 16px 2px rgba(0, 0, 0, 0.7), 20px 20px 1px blue;
+        }
+
+        50% {
+          text-shadow: none;
+        }
+        75% {
+          text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.7), -5px 5px 1px purple,
+            -6px 6px 2px rgba(0, 0, 0, 0.7), -10px 10px 1px red,
+            -11px 11px 2px rgba(0, 0, 0, 0.7), -15px 15px 1px green,
+            -16px 16px 2px rgba(0, 0, 0, 0.7), -20px 20px 1px blue;
+        }
+        100% {
+          text-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>font family</h1>
+      <p class="serif">AI serif 衬线字体</p>
+      <p class="sans-serif">AI sans-serif 无衬线</p>
+      <p class="monospace">AI monospace 等宽字体</p>
+      <p class="cursive">AI cursive 手写字体</p>
+      <p class="fantasy">AI fantasy 装饰字体</p>
+      <h1>font stack</h1>
+      <p class="none">
+        这段文字将用一些不存在的字体，看看最终回落到什么字体.some english
+      </p>
+      <p>fallback:</p>
+      <p>Chrome: Pingfang-SC</p>
+      <p>Safari: Times</p>
+      <h1>font style</h1>
+      <p class="style-transform">this is text-transform demo</p>
+      <p class="style-decoration">
+        this is text-decoration demo accept multiple value
+      </p>
+      <h1>text shadow</h1>
+      <p class="shadow">Text Shadow</p>
+      <p class="shadow no-transition">Text Shadow</p>
+      <p class="shadow animate">Text Shadow</p>
+      <h1>一些没用过的属性</h1>
+      <h2>font-kerning: 是否启用字间距</h2>
+      <p><span style="font-kerning: none">AV</span>AV font-kerning</p>
+      <p style="font-size-adjust: 2">font-size-adjust</p>
+      <h2>text-underline-position</h2>
+      <p style="text-decoration: underline; text-underline-position: auto">
+        text-underline-position
+      </p>
+      <p style="text-decoration: underline; text-underline-position: under">
+        text-underline-position
+      </p>
+      <h2>text-indent</h2>
+      <p style="width: 300px; outline: 1px solid blue; text-indent: 1em">
+        text indent demo, today is 2023.8.25, i'm learning css, yeah
+      </p>
+      <h2>text-overflow</h2>
+      <p
+        style="
+          width: 200px;
+          height: 200px;
+          outline: 1px solid blue;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        "
+      >
+        text-overflow demo, and this will not be seen
+      </p>
+      <h2>white-space</h2>
+      <p>pre-wrap</p>
+      <p style="font-size: 2rem; width: 200px; outline: 1px solid blue;white-space: pre-wrap">
+        But ere she from the church-door 
+        
+        
+        stepped She smiled and told us why: 'It
+        was a wicked woman's    curse,'       Quoth she, 'and what care I?' She smiled,
+        and smil     ed, and passed it off Ere from the door she stept—
+      </p>
+      <p>normal</p>
+      <p style="font-size: 2rem; width: 200px; outline: 1px solid blue;white-space: normal">
+        But ere she from the church-door 
+        
+        
+        stepped She smiled and told us why: 'It
+        was a wicked woman's    curse,'       Quoth she, 'and what care I?' She smiled,
+        and smil     ed, and passed it off Ere from the door she stept—
+      </p>
+      <p>nowrap</p>
+      <p style="font-size: 2rem; width: 200px; outline: 1px solid blue;white-space: nowrap">
+        But ere she from the church-door 
+        
+        
+        stepped She smiled and told us why: 'It
+        was a wicked woman's    curse,'       Quoth she, 'and what care I?' She smiled,
+        and smil     ed, and passed it off Ere from the door she stept—
+      </p>
+      <p>nowrap with &lt;br /&gt;</p>
+      <p style="font-size: 2rem; width: 200px; outline: 1px solid blue;white-space: nowrap">
+        But ere she from the church-door 
+        
+        
+        stepped She smiled and told<br /> us why: 'It
+        was a wicked woman's    curse,'       Quoth she, 'and what care I?' She smiled,
+        and smil     ed, and passed it off Ere from the door she stept—
+      </p>
+      <h2>word-break</h2>
+      <p style="width: 200px; outline: 1px solid blue">this is a long word demo, to show word-break: andthisisthelonglonglongword</p>
+      <p style="width: 200px; outline: 1px solid blue; word-break:break-all">this is a long word demo, to show word-break: andthisisthelonglonglongword</p>
+      <h2>text-align-last</h2>
+      <p style="width: 400px; outline: 1px solid blue; text-align-last: center">text-align-last demo, show how to align last line</p>
+    </section>
+  </body>
+</html>

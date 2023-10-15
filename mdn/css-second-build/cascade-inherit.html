@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #inherit {
+        color: blue;
+      }
+      #inherit ul {
+        color: coral;
+      }
+      #inherit ul > li:nth-child(2) {
+        color: revert;
+      }
+
+      #inherit .title h3 {
+        color: unset;
+        /* font-weight: revert; */
+      }
+
+      #inherit p {
+        display: inline;
+        border: 1px solid blue;
+      }
+      #inherit p {
+        display: unset;
+      }
+
+      #inherit .explain * {
+        border: none;
+        color: initial;
+      }
+      #inherit .none {
+        list-style: none;
+      }
+      #inherit strong {
+        text-decoration: underline;
+      }
+      .explain {
+        border: 10px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="inherit">
+      <h1>inherit</h1>
+      <div class="explain">
+        <p>常见有</p>
+        <ul>
+          <li>inherit</li>
+          <li>initial</li>
+        </ul>
+        <p>不常见有</p>
+        <ul>
+          <li>revert</li>
+          <li class="none">
+            <p>custom value -> userAgent value</p>
+          </li>
+          <li>unset</li>
+          <li class="none">
+            <p>1. 可继承属性，同 inherit</p>
+            <p>
+              2. 不可继承属性，同
+              initial（去属性页面能够查到属性的<strong>初始值</strong>）
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="title">
+        <h3 class="h3">H3 title</h3>
+      </div>
+      <ul>
+        <li>first line</li>
+        <li>second li</li>
+      </ul>
+      <p>paragraph</p>
+    </section>
+  </body>
+</html>

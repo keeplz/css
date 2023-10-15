@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        gap: 10em;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid lightgrey;
+        margin-bottom: 10px;
+      }
+      .one-line {
+        height: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .multi-line-base-height {
+        overflow: hidden;
+        position: relative;
+        overflow-wrap: break-word;
+        line-height: 1.5em;
+        height: 4.5em;
+      }
+      .multi-line-base-height::after {
+        position: absolute;
+        content: "...";
+        width: 1em;
+        bottom: 0;
+        right: 0;
+      }
+      .w-red {
+        color: red;
+      }
+
+      .multi-line-base-line {
+        height: 4.2em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        overflow-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>单行文本</h1>
+      <div class="one-line">
+        hello i am keeplz, this is my text over flow test, i don't where will
+        break
+      </div>
+      <div class="one-line">
+        你好，我是 keeplz， 这是我的文本溢出测试，我不知道在哪里会断开
+      </div>
+      <div class="one-line">AAAAAAAAAAAAABBBBBBBBBBBCCCCCCCCDDDDDDDDDDDD</div>
+      <pre>
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      </pre>
+    </section>
+
+    <section>
+      <h1>多行文本</h1>
+      <h2>基于盒子高度的缩略</h2>
+      <strong class="w-red">并不理想</strong>
+      <div class="multi-line-base-height">
+        hello i am keeplz, this is my text over flow test, i don't where will
+        break
+      </div>
+      <div class="multi-line-base-height">
+        你好，我是 keeplz， 这是我的文本溢出测试，我不知道在哪里会断开
+      </div>
+      <div class="multi-line-base-height">
+        AAAAAAAAAAAAABBBBBBBBBBBCCCCCCCCDDDDDDDDDDDD
+      </div>
+      <pre>
+      .multi-line-base-height {
+        <span class="w-red">overflow: hidden;</span>
+        position: relative;
+        overflow-wrap: break-word;
+        line-height: 1.5em;
+        height: 4.5em;
+      }
+      .multi-line-base-height::after {
+        position: absolute;
+        content: "...";
+        width: 1em;
+        bottom: 0;
+        right: 0;
+      }
+      </pre>
+    </section>
+    <section>
+      <h1>多行文本</h1>
+      <h2>基于行数</h2>
+      <!-- <quote class="w-red">并不理想</quote> -->
+      <div class="multi-line-base-line">
+        hello i am keeplz, this is my text over flow test, i don't where will
+        break
+      </div>
+      <div class="multi-line-base-line">
+        你好，我是 keeplz， 这是我的文本溢出测试，我不知道在哪里会断开
+      </div>
+      <div class="multi-line-base-line">
+        AAAAAAAAAAAAABBBBBBBBBBBCCCCCCCCDDDDDDDDDDDD
+      </div>
+      <pre>
+        .multi-line-base-line {
+          height: 4.2em;
+          <span class="w-red">display: -webkit-box;</span>
+          <span class="w-red">-webkit-line-clamp: 3;</span>
+          <span class="w-red">-webkit-box-orient: vertical;</span>
+          <span class="w-red">overflow: hidden;</span>
+          <span class="w-red">text-overflow: ellipsis;</span>
+          overflow-wrap: break-word;
+        }
+      </pre>
+    </section>
+  </body>
+</html>

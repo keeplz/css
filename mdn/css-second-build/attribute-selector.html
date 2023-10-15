@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        display: block;
+      }
+      a[title] {
+        color: lightcoral;
+      }
+      a[title="exact-title"] {
+        color: lightblue;
+      }
+      a[title~="exact-title2"] {
+        color: red;
+      }
+      a[class~="bb"] {
+        color: blue;
+      }
+      p[lang|="en"] {
+        color: purple;
+      }
+      /* p[lang^="en"] {
+        color: green;
+      } */
+
+      /* p[lang*="e"] {
+        color: aqua;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1>存否和值选择</h1>
+    <a>without title a</a>
+    <a title="test">with title</a>
+    <a title="exact-title">exact title a</a>
+    <a class="gg bb" title="exact-title exact-title2">exact title a</a>
+    <p lang="zh">lang="zh" |= 不匹配</p>
+    <p lang="en">lang="en-us" |="en"</p>
+    <p lang="en-US">lang="en-us" |="en"</p>
+    <hr />
+    <h1>子字符串匹配</h1>
+  </body>
+</html>

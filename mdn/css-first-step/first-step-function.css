@@ -1,0 +1,64 @@
+@import url("./first-step-function-square.css");
+
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 1em/150% Helvetica;
+    /* display: flex;
+        justify-content: center;
+        align-items: center; */
+}
+
+.outer {
+    color: #7a7374;
+    /* width: 500px; */
+    height: 20px;
+
+    background-color: #f0a1a8;
+}
+
+.inner {
+    /* width: calc(100% - 100px); */
+    height: 100%;
+    background-color: #22a2c3;
+}
+
+
+
+/* h1,
+      hr,
+      .outer {
+        display: none;
+      } */
+
+body {
+    
+    background-color: rgba(100,200,150, 0.3);
+    background: 20px 20px fixed;
+    /* 简写没有写的属性，会覆盖之前设置的值，让他回到初始值 */
+}
+
+@media (min-width: 1800px) {
+    /* >= 1800 应用 */
+    body {
+        background-color: rgba(100, 200, 230, 0.2);
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* <= 600 应用 */
+    body {
+        background-color:lightgoldenrodyellow
+    }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:focus{
+            outline: 2px solid red;
+        }
+        .visible:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        button:focus-visible {
+            outline: 2px solid blue
+        }
+    </style>
+</head>
+<body>
+    <a class="normal" href="#">test :focus</a>
+    <a class="visible" href="#">test :focus:not(:focus-visible)</a>
+    <button>click me</button>
+</body>
+</html>

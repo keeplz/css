@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        border: 1px solid blue;
+        max-height: 180px;
+        margin-bottom: 20px;
+      }
+      .h-tb {
+        writing-mode: horizontal-tb;
+      }
+      .v-rl {
+        writing-mode: vertical-rl;
+      }
+      .v-lr {
+        writing-mode: vertical-lr;
+      }
+      .wrapper > div {
+        /* width: 40px; */
+        /* height: 20px; */
+        /* margin-top: 10px; */
+        inline-size: 20px;
+        block-size: 40px;
+        margin-block-start: 10px;
+        border: 1px solid red;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>writing directions</h1>
+    <div class="wrapper">
+      默认文本方向，从左到右，从上到下
+      <div>1</div>
+      <div>2</div>
+    </div>
+    <div class="wrapper h-tb">
+      这段文本是，horizontal-tb
+      <div>1</div>
+      <div>2</div>
+    </div>
+    <div class="wrapper v-rl">
+      这段文本是日文的(垂直从右到左), vertical-rl
+      <div>1</div>
+      <div>2</div>
+    </div>
+    <div class="wrapper v-lr">
+      这段文本是不知道哪国的, vertical-lr
+      <div>1</div>
+      <div>2</div>
+    </div>
+  </body>
+</html>

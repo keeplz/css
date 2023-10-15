@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        border: 20px solid lightblue;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      div {
+        border: 2px solid blue;
+      }
+      span {
+        display: inline-block;
+        border: 1px solid red;
+        margin: 20px;
+      }
+      .wrapper {
+        width: 400px;
+        height: 400px;
+        background-image: url(https://mdn.github.io/learning-area/css/styling-boxes/backgrounds/emoji.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: local;
+        background-position: top center;
+        overflow: auto;
+      }
+      .wrapper > div {
+        height: 12200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>this is paragraph</span>
+    </div>
+    <div class="wrapper">
+      <div></div>
+    </div>
+  </body>
+</html>

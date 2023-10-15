@@ -1,0 +1,33 @@
+html {
+    font-family: sans-serif;
+    font-size: 10px;
+}
+:root{
+    --main-color: red;
+    --light-main: rgb(188, 0, 0)
+}
+/* Your CSS below here */
+
+.button {
+    margin: 3em auto;
+    /* font-size 设置em时候根据父级（10px）来计算  1.8 * 10 = 18px */
+    font-size: 1.8em;
+    width: 20rem;
+    height:16rem;
+    line-height: 16rem;
+    /* background-color: var(--main-color); */
+    color: white;
+    text-shadow: 1px 1px 2px black;;
+    text-align: center;
+
+    border-radius: 10px;
+    border: 1px solid var(--light-main);
+    /* 外阴影能让盒子有悬浮感 */
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 30%), var(--main-color);
+    /* 内阴影有光泽质感 */
+    /* 如何区分内外阴影？
+       x、y 的正负值决定了内阴影的方向
+    */
+    box-shadow: 3px 3px 4px black, inset 2px 2px 3px rgba(255,255,255,0.8), inset -2px -2px 3px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}

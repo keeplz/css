@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        text-shadow: 2px 2px 1px #ec22a6;
+        color: lightblue;
+        font-size: 100px;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hover me, baby</h1>
+    <script>
+      const text = document.querySelector("h1");
+
+      let originX;
+      let originY;
+
+      const calc = () => {
+        const coord = text.getBoundingClientRect();
+        const {
+          width: textWidth,
+          height: textHeight,
+          left: textLeft,
+          top: textTop,
+        } = coord;
+
+        originX = textLeft + textWidth / 2;
+        originY = textTop + textHeight / 2;
+      };
+
+      calc();
+
+      const BLUR_MAX = 20;
+      const RATIO = 5;
+
+      const update = (x, y) => {
+        text.style["text-shadow"] = `${x}px ${y}px 1px #ec22a6`;
+      };
+
+      const handler = (e) => {
+        requestAnimationFrame(() => {
+          const { clientX: x, clientY: y } = e;
+
+          const xDis = x - originX;
+          const yDis = y - originY;
+
+          const xDisAbs = Math.abs(x - originX);
+          const yDisAbs = Math.abs(y - originY);
+
+          const distance = Math.sqrt(
+            Math.pow(xDisAbs, 2) + Math.pow(yDisAbs, 2)
+          );
+
+          const xOffset = -(xDis / RATIO);
+          const yOffset = -(yDis / RATIO);
+
+          update(xOffset, yOffset);
+        });
+      };
+
+      window.addEventListener("mousemove", handler);
+      window.addEventListener("resize", () => {
+        calc();
+      });
+    </script>
+  </body>
+</html>

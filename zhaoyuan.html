@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* @font-face {
+        font-family: "Baby2";
+        src: url("./NISC18030.ttf");
+      } */
+      :root {
+        --c-red: #671728;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "雅痞-简";
+      }
+
+      #wrapper {
+        width: 800px;
+        height: 600px;
+        border: 10px solid var(--c-red);
+        border-radius: 2px;
+        position: relative;
+
+        box-sizing: border-box;
+        padding: 80px;
+
+        writing-mode: vertical-rl;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #wrapper::after {
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 5px solid var(--c-red);
+        z-index: -1;
+        /* 一开始用 width 98%，碰到了定位复杂的问题 */
+        /* 第二版用 transform scale，缩放效果并不居中 */
+        /* 现在用 absolute + top/left/right/bottom 拉伸元素
+            效果就比较完美
+        */
+      }
+
+      .main {
+        font-size: 40px;
+        font-weight: bold;
+      }
+      .content {
+        box-sizing: border-box;
+        padding: 80px 0;
+        text-decoration: underline 2px;
+      }
+
+      .square {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      .square > span {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        overflow-wrap: break-word;
+        border: 2px solid var(--c-red);
+        font-size: 21px;
+        text-align: center;
+        color: var(--c-red);
+        /* font-family: "GB18030 Bitmap"; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <p class="main">在招远</p>
+      <p class="main content">一直做餐饮，要做好餐饮。</p>
+      <p class="square"><span>小食侯宣</span></p>
+    </div>
+  </body>
+</html>

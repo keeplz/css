@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <link rel="stylesheet" href="./first-step-function.css" />
+  </head>
+  <body>
+    宽度大于1800 之后，font-size就变成了150%
+    <h1>calc</h1>
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+    <hr />
+    <div class="square">👹</div>
+    <script>
+      const inner = document.querySelector(".inner");
+      let now = 0;
+      const wrapperWidth = document
+        .querySelector(".outer")
+        .getClientRects()[0].width;
+      function move() {
+        requestAnimationFrame(() => {
+          //   console.log("animation", now);
+          if (now >= wrapperWidth) {
+            inner.style.width = `0`;
+            return;
+          }
+          now += 1;
+          inner.style.width = `calc(100% - ${now}px)`;
+          move();
+        });
+      }
+
+      move();
+
+      const square = document.querySelector(".square");
+      let deg = 0;
+      let help = 0;
+      let scale = 0;
+      function rotate() {
+        requestAnimationFrame(() => {
+          //   console.log(deg);
+          if (deg >= 360 * 10) {
+            square.style.transform = `rotate(${0}deg)  scale(${scale})`;
+
+            return;
+          }
+          help += 0.01;
+          deg += help;
+          if (scale <= 1) {
+            scale += 0.01;
+          }
+          square.style.transform = `rotate(${deg}deg)  scale(${scale})`;
+          rotate();
+        });
+      }
+      rotate();
+    </script>
+  </body>
+</html>

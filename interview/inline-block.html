@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #wrapper {
+        display: flex;
+      }
+      section {
+        flex: 1 1 50%;
+        height: 200px;
+        border: 10px solid rgba(0, 0, 0, 0.8);
+        overflow-y: auto;
+        /* overflow-wrap: break-word; */
+      }
+      span,
+      p {
+        border: 1px solid lightblue;
+      }
+      span {
+        margin: 20px;
+        padding: 20px;
+        width: 100px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://css-tricks.com/when-a-line-doesnt-break/"
+      >关于 inline 元素不换行的解决方法</a
+    >
+    <div id="wrapper">
+      <section>
+        <h1>inline</h1>
+        <h2>宽度高只有自身大小</h2>
+        <p>
+          测试一下，inline 元素的 margin padding
+          对于它旁边的<span>test</span>其他内容是否有影响。其实是<a
+            href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%86%85%E8%81%94%E7%9B%92%E5%AD%90"
+            >垂直方向是没有影响的</a
+          >
+        </p>
+      </section>
+      <section>
+        <h1>block</h1>
+        <h2>宽度占据100%</h2>
+        <p>paragraph</p>
+      </section>
+    </div>
+  </body>
+</html>

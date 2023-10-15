@@ -1,0 +1,135 @@
+/* General setup */
+.dont-exist {
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Josefin Sans', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+    float: left;
+    width: 50%;
+}
+
+aside {
+    float: left;
+    width: 30%;
+}
+
+nav {
+    float: left;
+    width: 20%;
+}
+
+footer {
+    clear: both;
+}
+
+header,
+section,
+aside,
+nav,
+footer {
+    padding: 20px;
+}
+
+/* header and footer */
+
+header,
+footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+h1, h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+body {
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}
+
+html {
+    font-size: 10px;
+}
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+h2 {
+    font-size: 2.5rem;
+}
+body {
+    font-size: 1.6em;
+    line-height: 1.5;
+}
+
+section h2 + p {
+    /* TODO 这里正确吗 */
+    text-indent: 20px;
+}
+
+a {
+    padding-right:20px;
+    background: url(./external-link-52.png) no-repeat  100% 0;
+    background-size: 16px 16px;
+}
+a:link {
+    color: #a66
+}
+a:visited {
+    color: #467562;
+}
+
+a:focus {
+    color: #F7EFD7;
+    text-decoration: none;
+    outline: none;
+}
+a:hover{
+    color: #A13600;
+    text-decoration: none;
+}
+a:active {
+    color: red;
+
+}
+
+ol, ul {
+    line-height: 1.5;
+}
+ol {
+    list-style-type: trad-chinese-formal;
+}
+ul {
+    list-style-type: circle;
+}
+
+nav ul {
+    list-style: none;
+}
+nav a {
+    background: unset;
+    display: block;
+    height: 6rem;
+    text-align: center;
+    border: 1px solid #a66;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    padding: 0;
+    line-height: 6rem;
+}

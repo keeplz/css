@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        display: grid;
+        border: 2px solid blue;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 20px;
+      }
+
+      .wrapper > div {
+        outline: 2px solid red;
+      }
+
+      .one {
+        height: 100px;
+      }
+      .two {
+        height: 200px;
+      }
+      .three {
+        height: 300px;
+      }
+
+      .min {
+        grid-template-rows: min-content;
+      }
+      .max {
+        grid-template-rows: max-content;
+      }
+    </style>
+  </head>
+  <body></body>
+  <div class="wrapper min">
+    <div class="one">min-content</div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </div>
+  <div class="wrapper max">
+    <div class="one">max-content</div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </div>
+</html>

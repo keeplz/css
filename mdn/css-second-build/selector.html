@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p[data-b="second-pa"] {
+        color: blue;
+      }
+
+      /* article:first-child {
+        background-color: red;
+        color: red;
+      } */
+      /* article:first-of-type {
+        background-color: red;
+      } */
+
+      /* article:first-child {
+        background-color: blue;
+      } */
+      article *:first-child {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p data-a="first-p">first paragraph</p>
+    <p data-b="second-p">second paragraph data-b="second-p"</p>
+    <p data-b="second-pa">p[data-b="second-pa"]</p>
+    <hr />
+    <h1>in div</h1>
+
+    <div>
+      <article>
+        <h1>article 1</h1>
+        <p>article content</p>
+      </article>
+      <article>
+        <h1>article 2</h1>
+        <p>article content 2</p>
+      </article>
+    </div>
+    <hr />
+    <article>
+      <h1>article 1</h1>
+      <p>article content</p>
+    </article>
+    <article>
+      <h1>article 2</h1>
+      <p>article content 2</p>
+    </article>
+  </body>
+</html>

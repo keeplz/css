@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .example {
+        height: 300px;
+        border: 2px solid lightblue;
+        display: flex;
+        gap: 50px;
+      }
+      .example .case {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+      }
+      .example .inner {
+        width: 150px;
+        background-color: lightcyan;
+      }
+      .m-t-50 {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>溢出长什么样？</h1>
+    <div class="example">
+      <div class="case">
+        这个盒子有固定的宽高，当里面的文本很长，他装不下的时候，就会出现溢出现象
+        <span class="red"
+          >html
+          会尽可能的让内容显示出来，以确保使用者优先：即使样式崩坏，内容仍能看到</span
+        >
+      </div>
+      <div class="case">
+        aaaaaaabbbbbbbccc1111bbbbbdddddkkkkkkk
+        一个很长字符串的时候，浏览器不知道如何断行所以出现了横向溢出
+      </div>
+      <div class="case m-t-50">
+        <div class="inner">1</div>
+        这是盒子溢出的情况
+      </div>
+    </div>
+    <h1>处理</h1>
+    <h2>overflow: hidden</h2>
+    <h2>overflow: scrolling</h2>
+    <h2>overflow: auto</h2>
+    <div class="example solution">
+      <div class="case" style="overflow: auto">
+        <p>auto</p>
+        这个盒子有固定的宽高，当里面的文本很长，他装不下的时候，就会出现溢出现象
+        <span class="red"
+          >html
+          会尽可能的让内容显示出来，以确保使用者优先：即使样式崩坏，内容仍能看到</span
+        >
+      </div>
+      <div class="case" style="overflow: hidden">
+        <p>hidden</p>
+        aaaaaaabbbbbbbccc1111bbbbbdddddkkkkkkk
+        一个很长字符串的时候，浏览器不知道如何断行所以出现了横向溢出
+      </div>
+      <div class="case" style="overflow: auto">
+        <p>auto</p>
+        <div class="inner">1</div>
+        这是盒子溢出的情况
+      </div>
+    </div>
+  </body>
+</html>

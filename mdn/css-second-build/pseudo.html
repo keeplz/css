@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main article:first-child {
+        /* background-color: lightcoral; */
+      }
+      article:only-child {
+        background-color: red;
+      }
+      .first-line::first-line {
+        color: lightblue;
+      }
+
+      article :first-of-type {
+        /* background-color: red; */
+      }
+
+      .second:first-of-type {
+        color: green;
+      }
+      .wrapper p:first-child {
+        background-color: blue;
+      }
+      /* div p:first-of-type {
+        background-color: green;
+      } */
+
+      input:checked + label {
+        background-color: red;
+      }
+
+      .wrapper > div p:last-child {
+        background-color: yellow;
+      }
+
+      ul > li:nth-child(2n) {
+        background-color: lightblue;
+      }
+
+      .mix-p-span p:nth-of-type(2) {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <main>
+      <article>article1</article>
+      <article>article2</article>
+      <article class="first-line">
+        <p>
+          Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh
+          onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+        </p>
+      </article>
+    </main>
+
+    <hr />
+    <article class="second">
+      <h1>test :first-of-type</h1>
+      <p>first paragraph</p>
+      <p>second paragraph</p>
+      <div>first div<em>this is frist em</em></div>
+    </article> -->
+
+    <div class="wrapper">
+      <h1>h1 title</h1>
+      <p>first paragraph</p>
+      <p>second paragraph</p>
+      <div>
+        <h1>inner h1 title</h1>
+        <p>inner first paragraph</p>
+        <p>inner second paragraph</p>
+      </div>
+    </div>
+    <input id="input" type="checkbox" />
+    <label for="input">click</label>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+    </ul>
+    <div class="mix-p-span">
+      <p>p1</p>
+      <span>span 1</span>
+      <span>span 2</span>
+      <p>p2</p>
+      <p>p3</p>
+      <div>
+        <p>inner p1</p>
+        <span>inner span 1</span>
+        <span>inner span 2</span>
+        <p>inner p2</p>
+        <p>inner p3</p>
+      </div>
+    </div>
+  </body>
+</html>
